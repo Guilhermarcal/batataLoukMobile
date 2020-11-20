@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.SignUpActivity"
+    android:background="@color/black">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="56dp"
+                android:layout_marginBottom="120dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotothin"
+                    android:text="@string/signUp_cadastrar"
+                    android:textColor="@color/orange"
+                    android:textSize="34sp"/>
+
+                // nome
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46dp"
+                    android:fontFamily="@font/robotolight"
+                    android:text="@string/signUp_name"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/signUp_name"
+                    android:fontFamily="@font/robotolight"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:inputType="textCapSentences"
+                    android:textSize="14sp"/>
+
+                //email
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46dp"
+                    android:fontFamily="@font/robotolight"
+                    android:text="@string/signUp_email"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/signUp_email"
+                    android:fontFamily="@font/robotolight"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp"/>
+
+
+                //Senha
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46dp"
+                    android:fontFamily="@font/robotolight"
+                    android:text="@string/signUp_password"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/signUp_password"
+                    android:fontFamily="@font/robotolight"
+                    android:textColor="@color/white"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="46dp"
+                    android:fontFamily="@font/robotolight"
+                    android:text="@string/signUp_confirmPassword"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/confirm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:hint="@string/signUp_confirmPassword"
+                    android:fontFamily="@font/robotolight"
+                    android:textColor="@color/white"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/white"
+                    android:textSize="14sp"/>
+
+
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_marginTop="36dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/orange"
+                    android:fontFamily="@font/robotothin"
+                    android:textAllCaps="false"
+                    android:text="@string/signUp_cadastrar"/>
+
+                <TextView
+                    android:id="@+id/logar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/robotolight"
+                    android:text="@string/signUp_logar"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:textSize="14sp"
+                    android:clickable="true"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

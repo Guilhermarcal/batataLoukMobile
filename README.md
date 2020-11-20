@@ -1,2 +1,0 @@
-# batataLoukMobile
-Desenvolvimento mobile - Kotlin

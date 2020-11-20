@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Batata Louk</string>
+
+
+    //tela de login
+    <string name="login_login">Login</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Senha</string>
+    <string name="login_entrar">Entrar</string>
+    <string name="login_cadastrar">Ainda não tem conta? <b>Cadastre-se</b></string>
+
+    //tela de cadastro (sign Up)
+    <string name="signUp_signUp">Cadastro</string>
+    <string name="signUp_name">Nome</string>
+    <string name="signUp_email">Email</string>
+    <string name="signUp_password">Senha</string>
+    <string name="signUp_confirmPassword">Confirmar a senha</string>
+    <string name="signUp_cadastrar">Cadastrar</string>
+    <string name="signUp_logar">Já possui uma conta? <b>Entrar</b></string>
+
+    // Frame de alerta
+    <string name="title">Ops...</string>
+    <string name="UserAndPasswordInvalid">Usuário ou senha inválidos!</string>
+    <string name="ok">OK</string>
+    <string name="UserCreated">Usuário criado com sucesso!</string>
+    <string name="UserAlreadyExist">Usuário já existe use outro email!</string>
+    <string name="sucesso">Parabéns!</string>
+    <string name="InvalidPassword">As senhas não se correspondem</string>
+    <string name="erro_generico">Algo inesperado aconteceu. Tente novamente mais tarde</string>
+
+    // main
+    <string name="main_sair">sair</string>
+
+
+</resources>
