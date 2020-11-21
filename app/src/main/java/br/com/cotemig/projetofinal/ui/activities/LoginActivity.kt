@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
                         saveUser(account)
 
                         // login correto abre a tela principal
-                        var intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        var intent = Intent(this@LoginActivity, CardapioActivity::class.java)
                         startActivity(intent)
 
                         //salvar usuario

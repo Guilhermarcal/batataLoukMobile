@@ -32,8 +32,18 @@ class RetrofitInitializer {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+    private val retrofitBatata = Retrofit.Builder()
+        .client(okHttpClient)
+        .baseUrl("http://192.168.1.11/batata/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
     fun serviceAccount(): AccountService {
         return retrofit.create(AccountService::class.java)
+    }
+
+    fun serviceProdutos(): ProdutosService {
+        return retrofitBatata.create(ProdutosService::class.java)
     }
 
 }
