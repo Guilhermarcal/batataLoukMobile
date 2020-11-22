@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.CardapioFragment">
+    tools:context=".ui.fragments.PedidoFragment">
 
     <LinearLayout
         android:id="@+id/cabecalho"
@@ -38,11 +38,5 @@
     </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/cabecalho"
-        android:id="@+id/lista_produtos"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
 </RelativeLayout>

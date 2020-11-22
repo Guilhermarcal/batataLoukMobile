@@ -7,7 +7,9 @@ import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.models.Produtos
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import br.com.cotemig.projetofinal.ui.adapters.ProdutosAdapter
+import br.com.cotemig.projetofinal.ui.fragments.BuscaFragment
 import br.com.cotemig.projetofinal.ui.fragments.CardapioFragment
+import br.com.cotemig.projetofinal.ui.fragments.PedidoFragment
 import kotlinx.android.synthetic.main.activity_cardapio.*
 import retrofit2.Call
 import retrofit2.Response
@@ -19,6 +21,17 @@ class CardapioActivity : AppCompatActivity() {
 
         setFragment(CardapioFragment(), "CardapioFragment")
 
+        home.setOnClickListener {
+            setFragment(CardapioFragment(), "CardapioFragment")
+        }
+
+        busca.setOnClickListener {
+            setFragment(BuscaFragment(), "BuscaFragment")
+        }
+
+        pedido.setOnClickListener {
+            setFragment(PedidoFragment(), "PedidoFragment")
+        }
     }
 
     fun setFragment(f: Fragment, name: String){
