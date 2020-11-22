@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/imagem_produto"
         android:layout_width="match_parent"
-        android:layout_height="219dp"
+        android:layout_height="wrap_content"
         android:layout_margin="11dp" />
 
     <ImageView
         android:id="@+id/logo_produto"
         android:layout_width="59dp"
         android:layout_height="59dp"
-        android:layout_marginLeft="17dp"
         android:layout_below="@id/imagem_produto"
+        android:layout_marginLeft="17dp"
         android:src="@drawable/logo" />
 
     <TextView
@@ -24,6 +24,7 @@
         android:layout_below="@id/imagem_produto"
         android:layout_marginLeft="21dp"
         android:layout_toRightOf="@id/logo_produto"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <TextView
@@ -32,6 +33,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/nome_produto"
         android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@id/logo_produto" />
+        android:layout_toRightOf="@id/logo_produto"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/descricao_produto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preco_produto"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@id/logo_produto"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
 </RelativeLayout>

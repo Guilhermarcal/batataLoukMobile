@@ -5,10 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.models.Produtos
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
-import br.com.cotemig.projetofinal.ui.activities.MainActivity
+import br.com.cotemig.projetofinal.ui.activities.CardapioActivity
 import br.com.cotemig.projetofinal.ui.adapters.ProdutosAdapter
 import kotlinx.android.synthetic.main.fragment_cardapio.view.*
 import retrofit2.Call
@@ -29,7 +30,7 @@ class CardapioFragment : Fragment() {
 
     fun getProdutos(view: View){
 
-        var activity = context as MainActivity
+        var activity = context as CardapioActivity
 
         var s = RetrofitInitializer().serviceProdutos()
 
@@ -43,6 +44,11 @@ class CardapioFragment : Fragment() {
                     if (it.code() == 200){
 
                         view.lista_produtos.adapter = ProdutosAdapter(activity, it.body().produtos)
+
+                        view.lista_produtos.layoutManager = LinearLayoutManager(
+                            activity,
+                            LinearLayoutManager.VERTICAL, false
+                        )
 
                     }
 

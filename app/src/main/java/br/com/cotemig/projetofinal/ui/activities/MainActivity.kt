@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
         sair.setOnClickListener {
 
-
             /*MaterialDialog(this@MainActivity).show {
                 title(R.string.title)
                 message(R.string.erro_generico)
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        setFragment(CardapioFragment(), name = "CardapioFragment")
+        //setFragment(CardapioFragment(), "CardapioFragment")
     }
 
     fun showLoginActivity() {
@@ -41,18 +40,5 @@ class MainActivity : AppCompatActivity() {
         finish()
     }
 
-    fun setFragment(f: Fragment, name: String){
 
-        //iniciando a transação para trocar de conteúdo da tela (fragment)
-        val ft = supportFragmentManager.beginTransaction()
-
-        //adicionando o objeto instanciado do fragment
-        ft.replace(R.id.content, f)
-
-        //adicionando o fragment com o nome na pilha de fragments
-        ft.addToBackStack(name)
-
-        //confirmando a troca do fragment no framelayout
-        ft.commit()
-    }
 }

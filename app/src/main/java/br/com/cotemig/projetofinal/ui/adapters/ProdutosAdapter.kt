@@ -28,8 +28,10 @@ class ProdutosAdapter (var context: Context, var table : List<Itens>) :
 
     class ProdutosHolder( itemView : View) : RecyclerView.ViewHolder(itemView){
         fun bind (context: Context, itens : Itens){
+
             itemView.nome_produto.text = itens.nome
-            itemView.preco_produto.text = "R$ " + itens.preco.toString()
+            itemView.descricao_produto.text = itens.descricao
+            itemView.preco_produto.text = itens.preco.toString()
             Glide.with(context).load(itens.foto).into(itemView.imagem_produto)
 
         }
