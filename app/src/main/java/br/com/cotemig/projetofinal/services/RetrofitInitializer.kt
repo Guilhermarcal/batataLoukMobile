@@ -34,7 +34,7 @@ class RetrofitInitializer {
 
     private val retrofitBatata = Retrofit.Builder()
         .client(okHttpClient)
-        .baseUrl("http://192.168.1.11/batata/")
+        .baseUrl("http://191.234.162.161/batata/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 

@@ -6,5 +6,8 @@
 
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
+    <color name="transparent">#000000ff</color>
     <color name="orange">#f98d11</color>
+    <color name="red">#f63022</color>
+    <color name="background_CorDeFundo">#ffffff</color>
 </resources>

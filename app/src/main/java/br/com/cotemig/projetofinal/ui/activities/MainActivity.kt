@@ -3,8 +3,10 @@ package br.com.cotemig.projetofinal.ui.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.helpers.SharedPreferencesHelpers
+import br.com.cotemig.projetofinal.ui.fragments.CardapioFragment
 import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             showLoginActivity()
 
         }
+
+        setFragment(CardapioFragment(), name = "CardapioFragment")
     }
 
     fun showLoginActivity() {
@@ -35,5 +39,20 @@ class MainActivity : AppCompatActivity() {
         var intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    fun setFragment(f: Fragment, name: String){
+
+        //iniciando a transação para trocar de conteúdo da tela (fragment)
+        val ft = supportFragmentManager.beginTransaction()
+
+        //adicionando o objeto instanciado do fragment
+        ft.replace(R.id.content, f)
+
+        //adicionando o fragment com o nome na pilha de fragments
+        ft.addToBackStack(name)
+
+        //confirmando a troca do fragment no framelayout
+        ft.commit()
     }
 }

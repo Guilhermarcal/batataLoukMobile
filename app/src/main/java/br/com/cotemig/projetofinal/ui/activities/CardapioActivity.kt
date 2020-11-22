@@ -15,36 +15,10 @@ class CardapioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cardapio)
 
-        getProdutos()
+
 
     }
 
-    fun getProdutos(){
 
-        var s = RetrofitInitializer().serviceProdutos()
-
-        var call = s.getProdutos()
-
-        call.enqueue(object : retrofit2.Callback<Produtos>{
-            override fun onResponse(call: Call<Produtos>?, response: Response<Produtos>?) {
-
-                response?.let {
-
-                    if (it.code() == 200){
-
-                        lista_produtos.adapter = ProdutosAdapter(this@CardapioActivity, it.body().produtos)
-
-                    }
-
-                }
-
-            }
-
-            override fun onFailure(call: Call<Produtos>?, t: Throwable?) {
-
-            }
-
-        })
-    }
 
 }
