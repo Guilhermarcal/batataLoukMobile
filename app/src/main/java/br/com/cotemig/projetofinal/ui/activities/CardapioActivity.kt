@@ -37,8 +37,7 @@ class CardapioActivity : AppCompatActivity() {
         }
 
         user.setOnClickListener {
-            SharedPreferencesHelpers.delete(this,"userdata", "user")
-            showLoginActivity()
+            setFragment(UserFragment(), "UserFragment")
         }
     }
 
@@ -56,12 +55,5 @@ class CardapioActivity : AppCompatActivity() {
         //confirmando a troca do fragment no framelayout
         ft.commit()
     }
-    fun showLoginActivity() {
 
-
-        var intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-
-        finish()
-    }
 }
