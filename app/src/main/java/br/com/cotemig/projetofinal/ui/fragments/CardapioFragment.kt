@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.models.Produtos
@@ -16,6 +17,8 @@ import retrofit2.Call
 import retrofit2.Response
 
 class CardapioFragment : Fragment() {
+
+    lateinit var activity: AppCompatActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

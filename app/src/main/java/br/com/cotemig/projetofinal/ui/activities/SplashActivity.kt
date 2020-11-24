@@ -59,7 +59,7 @@ class SplashActivity : AppCompatActivity() {
                     if (it.code() == 200) {
 
                         // login correto abre a tela principal
-                        var intent = Intent(this@SplashActivity, MainActivity::class.java)
+                        var intent = Intent(this@SplashActivity, CardapioActivity::class.java)
                         startActivity(intent)
 
                         //salvar usuario

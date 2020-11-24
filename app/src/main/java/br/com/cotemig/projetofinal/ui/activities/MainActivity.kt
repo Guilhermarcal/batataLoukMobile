@@ -15,30 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sair.setOnClickListener {
 
-            /*MaterialDialog(this@MainActivity).show {
-                title(R.string.title)
-                message(R.string.erro_generico)
-                positiveButton(R.string.ok)
-                positiveButton {
-                    showLoginActivity()
-                }       */
-            showLoginActivity()
-
-        }
 
         //setFragment(CardapioFragment(), "CardapioFragment")
     }
 
-    fun showLoginActivity() {
 
-        SharedPreferencesHelpers.delete(this,"userdata", "user")
-
-        var intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
 
 
 }

@@ -21,12 +21,12 @@
         android:orientation="horizontal">
 
         <RelativeLayout
-        android:id="@+id/home"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
 
         <ImageButton
+            android:id="@+id/home"
             android:background="@drawable/menu_background"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -36,12 +36,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/busca"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageButton
+                android:id="@+id/busca"
                 android:background="@drawable/menu_background"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -51,12 +52,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/pedido"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageButton
+                android:id="@+id/pedido"
                 android:background="@drawable/menu_background"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -66,12 +68,13 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/user"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
 
             <ImageButton
+                android:id="@+id/user"
                 android:background="@drawable/menu_background"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
