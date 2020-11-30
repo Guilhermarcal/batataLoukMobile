@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.LoginActivity"
-    android:background="@color/black">
-    
+    android:background="@drawable/splash_batata"
+    tools:context=".ui.activities.LoginActivity">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,86 +16,79 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ketchup_login" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
                 android:layout_marginHorizontal="56dp"
-                android:layout_marginBottom="120dp"
+                android:layout_marginBottom="80dp"
                 android:orientation="vertical">
 
-                <TextView
+                <ImageView
+                    android:id="@+id/logo_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/robotothin"
-                    android:text="@string/login_login"
-                    android:textColor="@color/orange"
-                    android:textSize="34sp"/>
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="132dp"
+                    android:src="@drawable/logo" />
 
-                <TextView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="46dp"
-                    android:fontFamily="@font/robotolight"
-                    android:text="@string/login_email"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/icon_user" />
 
                 <EditText
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="@string/login_email"
                     android:fontFamily="@font/robotolight"
+                    android:hint="@string/login_email"
+                    android:layout_marginBottom="10dp"
+                    android:inputType="textEmailAddress"
                     android:textColor="@color/white"
                     android:textColorHint="@color/white"
-                    android:inputType="textEmailAddress"
-                    android:textSize="14sp"/>
-
-
-                //Senha
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="46dp"
-                    android:fontFamily="@font/robotolight"
-                    android:text="@string/login_password"
-                    android:textColor="@color/white"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:hint="@string/login_password"
                     android:fontFamily="@font/robotolight"
-                    android:textColor="@color/white"
+                    android:hint="@string/login_password"
                     android:inputType="textPassword"
+                    android:textColor="@color/white"
                     android:textColorHint="@color/white"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/esqueciMinhaSenha"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:text="Esqueci minha senha"
-                    android:textSize="12sp"
-                    android:gravity="right|center_vertical"
                     android:clickable="true"
+                    android:gravity="right|center_vertical"
+                    android:text="Esqueci minha senha"
                     android:textColor="@color/white"
+                    android:textSize="12sp"
 
                     />
 
                 <Button
                     android:id="@+id/login"
-                    android:layout_marginTop="36dp"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="36dp"
                     android:background="@color/orange"
                     android:fontFamily="@font/robotothin"
+                    android:text="@string/login_entrar"
                     android:textAllCaps="false"
-                    android:text="@string/login_entrar"/>
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -103,22 +96,19 @@
                 android:id="@+id/cadastrar"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:fontFamily="@font/robotolight"
-                android:text="@string/login_cadastrar"
-                android:textColor="@color/white"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="40dp"
-                android:textSize="14sp"
                 android:clickable="true"
+                android:fontFamily="@font/robotolight"
                 android:gravity="center"
-                />
+                android:text="@string/login_cadastrar"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
 
-    </RelativeLayout>
-
+        </RelativeLayout>
 
 
     </ScrollView>
-
 
 
 </RelativeLayout>

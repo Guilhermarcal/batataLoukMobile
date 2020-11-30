@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activities.SignUpActivity"
-    android:background="@color/black">
+    android:background="@drawable/splash_batata">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,10 +30,9 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/robotothin"
                     android:text="@string/signUp_cadastrar"
-                    android:textColor="@color/orange"
+                    android:textColor="@color/white"
                     android:textSize="34sp"/>
 
-                // nome
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

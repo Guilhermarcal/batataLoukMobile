@@ -5,12 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.Animation
+import android.view.animation.RotateAnimation
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.helpers.SharedPreferencesHelpers
 import br.com.cotemig.projetofinal.models.Account
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_splash.*
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
@@ -22,6 +27,8 @@ class SplashActivity : AppCompatActivity() {
 
         var user = SharedPreferencesHelpers.readString(this, "userdata", "user")
 
+        rotateAnim(logo_splash)
+
         user?.let {
 
             // se ele for vazio vai pra tela de login
@@ -32,7 +39,7 @@ class SplashActivity : AppCompatActivity() {
 
                     showLoginActivity()
 
-                }, 2000)
+                }, 3000)
             } else {
 
                 login(it)
@@ -100,6 +107,19 @@ class SplashActivity : AppCompatActivity() {
         var intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    fun rotateAnim(view : View){
+        val interpolator = AccelerateDecelerateInterpolator()
+        val animation = RotateAnimation(
+            0f, 360f,
+            Animation.RELATIVE_TO_SELF, 0.5f,
+            Animation.RELATIVE_TO_SELF, 0.5f)
+        animation.duration = 1500L
+        animation.repeatMode = Animation.REVERSE
+        animation.repeatCount = 2
+        animation.interpolator = interpolator
+        view.startAnimation(animation)
     }
 
 }

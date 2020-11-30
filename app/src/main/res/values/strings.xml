@@ -30,9 +30,8 @@
 
     // main
     <string name="main_sair">sair</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ola">Olá Dêndera</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="em_andamento">Em andamento</string>
 
 
 </resources>

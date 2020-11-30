@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="145dp"
+        android:layout_height="145dp">
+
+        <ImageView
+            android:id="@+id/foto_filtro"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+        <View
+            android:layout_toRightOf="@id/foto_filtro"
+            android:layout_width="1dp"
+            android:layout_height="80dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@color/red"/>
+
+        <TextView
+            android:id="@+id/nome_filtro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/foto_filtro"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
