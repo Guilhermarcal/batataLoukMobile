@@ -27,11 +27,16 @@
     <string name="sucesso">Parabéns!</string>
     <string name="InvalidPassword">As senhas não se correspondem</string>
     <string name="erro_generico">Algo inesperado aconteceu. Tente novamente mais tarde</string>
+    <string name="Atencao">Atenção!</string>
+    <string name="Verifique">Verifique seu email para redefinir a senha.</string>
+    <string name="Forgot">Email inválido!</string>
+
 
     // main
     <string name="main_sair">sair</string>
     <string name="pedidos">Pedidos</string>
     <string name="em_andamento">Em andamento</string>
+    <string name="forgot_confirmarEmail">Confirmar email</string>
 
 
 </resources>

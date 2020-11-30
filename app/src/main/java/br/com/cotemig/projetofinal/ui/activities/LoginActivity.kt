@@ -31,6 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
             finish()
         }
+
+        esqueciMinhaSenha.setOnClickListener {
+            var intent = Intent(this, ForgotActivity::class.java)
+            startActivity(intent)
+
+            finish()
+        }
     }
 
     fun loginClick(){

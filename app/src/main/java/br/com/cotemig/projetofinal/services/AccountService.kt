@@ -12,4 +12,7 @@ interface AccountService{
 
     @POST("account")
     fun create(@Body account: Account): Call<Account>
+
+    @POST("account/forgot")
+    fun forgot(@Body account: Account): Call<Account>
 }

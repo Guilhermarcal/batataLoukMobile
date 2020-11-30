@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.activities.ProgressBarActivity"></activity>
+        <activity android:name=".ui.activities.ForgotActivity"></activity>
+        <activity android:name=".ui.activities.ProgressBarActivity" />
         <activity android:name=".ui.activities.CardapioActivity" />
         <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.LoginActivity" />
