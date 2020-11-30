@@ -12,9 +12,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
+import br.com.cotemig.projetofinal.models.Itens
 import br.com.cotemig.projetofinal.models.Produtos
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import br.com.cotemig.projetofinal.ui.activities.CardapioActivity
@@ -25,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_cardapio.view.*
 import retrofit2.Call
 import retrofit2.Response
 
-class CardapioFragment : Fragment() {
+class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
 
     lateinit var activity: AppCompatActivity
 
@@ -61,7 +63,7 @@ class CardapioFragment : Fragment() {
 
                     if (it.code() == 200){
 
-                        view.lista_produtos.adapter = ProdutosAdapter(activity, it.body().produtos)
+                        view.lista_produtos.adapter = ProdutosAdapter(activity, it.body().produtos, this@CardapioFragment)
 
                         view.lista_produtos.layoutManager = LinearLayoutManager(
                             activity,
@@ -121,6 +123,37 @@ class CardapioFragment : Fragment() {
             }, 500L)
 
         }
+    }
+
+    companion object {
+        fun getInstance(activity: AppCompatActivity): CardapioFragment {
+
+            var f = CardapioFragment()
+            f.activity = activity
+            return f
+
+        }
+
+    }
+
+    override fun carrinho(itens: Itens) {
+
+        var itemList = java.util.ArrayList<Int>()
+        var aux: Int = 0
+
+
+            itemList.add(itens.id)
+
+        /*    itemList.forEach {
+                if (itemList[aux] == itens.id) {
+                    itemList.add(itens.id)
+                }
+            }
+        }*/
+
+        Toast.makeText(context, "ID: " + itemList.toString(), Toast.LENGTH_LONG).show()
+
+
     }
 
 }

@@ -10,7 +10,7 @@ import br.com.cotemig.projetofinal.models.Itens
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_cardapio.view.*
 
-class ProdutosAdapter (var context: Context, var table : List<Itens>) :
+class ProdutosAdapter (var context: Context, var table : List<Itens>, var listener: ProdutosAdapterListener) :
     RecyclerView.Adapter<ProdutosAdapter.ProdutosHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdutosHolder {
@@ -19,7 +19,7 @@ class ProdutosAdapter (var context: Context, var table : List<Itens>) :
     }
 
     override fun onBindViewHolder(holder: ProdutosHolder, position: Int) {
-        holder.bind(context, table[position])
+        holder.bind(context, table[position], listener)
     }
 
     override fun getItemCount(): Int {
@@ -27,14 +27,24 @@ class ProdutosAdapter (var context: Context, var table : List<Itens>) :
     }
 
     class ProdutosHolder( itemView : View) : RecyclerView.ViewHolder(itemView){
-        fun bind (context: Context, itens : Itens){
+        fun bind (context: Context, itens : Itens, listener: ProdutosAdapterListener){
 
             itemView.nome_produto.text = itens.nome
             itemView.descricao_produto.text = itens.descricao
             itemView.preco_produto.text = itens.preco.toString()
             Glide.with(context).load(itens.foto).into(itemView.imagem_produto)
 
+            itemView.btn_adicionar.setOnClickListener {
+                listener.carrinho(itens)
+            }
+
         }
+    }
+
+    interface ProdutosAdapterListener {
+
+        fun carrinho(itens : Itens)
+
     }
 
 }

@@ -17,7 +17,7 @@ class CardapioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cardapio)
 
-        setFragment(CardapioFragment(), "CardapioFragment")
+        setFragment(CardapioFragment.getInstance(this), "CardapioFragment")
 
         home.setOnClickListener {
             setFragment(CardapioFragment(), "CardapioFragment")

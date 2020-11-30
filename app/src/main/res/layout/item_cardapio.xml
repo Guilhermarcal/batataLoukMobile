@@ -46,4 +46,12 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/btn_adicionar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar"
+        android:layout_below="@id/imagem_produto"
+        android:layout_alignParentRight="true"/>
+
 </RelativeLayout>
