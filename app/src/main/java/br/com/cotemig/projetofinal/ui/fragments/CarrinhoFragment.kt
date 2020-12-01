@@ -15,8 +15,6 @@ import br.com.cotemig.projetofinal.models.Produtos
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import br.com.cotemig.projetofinal.ui.activities.CardapioActivity
 import br.com.cotemig.projetofinal.ui.adapters.CarrinhoAdapter
-import br.com.cotemig.projetofinal.ui.adapters.ProdutosAdapter
-import kotlinx.android.synthetic.main.fragment_cardapio.view.*
 import kotlinx.android.synthetic.main.fragment_cardapio.view.linear_fragment_cardapio
 import kotlinx.android.synthetic.main.fragment_cardapio.view.lista_produtos
 import kotlinx.android.synthetic.main.fragment_cardapio.view.pb_cardapio
@@ -39,7 +37,12 @@ class CarrinhoFragment : Fragment() {
 
         getCarrinho(view)
 
-        Anime().tradeView(view.pb_cardapio, view.linear_fragment_cardapio)
+        Anime().tradeView(view.pb_cardapio, view.relative_fragment_cardapio)
+
+        view.finalizar_pedidos.setOnClickListener {
+            var activity = context as CardapioActivity
+            activity.setFragment(EnderecoFragment(), "EnderecoFragment")
+        }
 
         return view
     }
@@ -83,9 +86,11 @@ class CarrinhoFragment : Fragment() {
 
                         if (carrinhoProdutos.isEmpty()){
                             view.CarrinhoVazio.visibility = View.VISIBLE
+                            view.relative_finalizar_pedidos.visibility = View.INVISIBLE
 
                         } else{
                             view.CarrinhoVazio.visibility = View.INVISIBLE
+                            view.relative_finalizar_pedidos.visibility = View.VISIBLE
 
                         }
 

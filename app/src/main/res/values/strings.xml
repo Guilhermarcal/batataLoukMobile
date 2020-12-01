@@ -23,6 +23,7 @@
     <string name="UserAndPasswordInvalid">Usuário ou senha inválidos!</string>
     <string name="ErrorCpf">CEP inválido!</string>
     <string name="CadastroEndereco">Endereço cadastrado com sucesso!</string>
+    <string name="PedidoSucesso">Pedido cadastrado com sucesso!</string>
     <string name="ok">OK</string>
     <string name="UserCreated">Usuário criado com sucesso!</string>
     <string name="UserAlreadyExist">Usuário já existe use outro email!</string>
@@ -44,9 +45,10 @@
     <string name="edit_text_number_cadastro_endereco">Digite o número da casa</string>
 
     // main
-    <string name="main_sair">sair</string>
+    <string name="main_sair">Logout</string>
     <string name="pedidos">Pedidos</string>
-    <string name="em_andamento">Em andamento</string>
+    <string name="meus_dados">Meus dados</string>
+    <string name="historico_pedidos">Histórico de pedidos</string>
     <string name="forgot_confirmarEmail">Confirmar email</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -56,6 +56,10 @@ class RetrofitInitializer {
         return retrofitBatata.create(EnderecoService::class.java)
     }
 
+    fun servicePedido(): PedidoService {
+        return retrofitBatata.create(PedidoService::class.java)
+    }
+
     fun serviceProdutos(): ProdutosService {
         return retrofitBatata.create(ProdutosService::class.java)
     }

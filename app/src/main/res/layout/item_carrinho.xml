@@ -1,86 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_completo"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/item_completo">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imagem_produto"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="11dp" />
+        android:layout_marginHorizontal="20dp">
 
-    <ImageView
-        android:id="@+id/logo_produto"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:layout_below="@id/imagem_produto"
-        android:layout_marginLeft="17dp"
-        android:src="@drawable/logo" />
+        <ImageView
+            android:id="@+id/logo_produto"
+            android:layout_width="59dp"
+            android:layout_height="59dp"
+            android:layout_marginLeft="17dp"
+            android:src="@drawable/logo" />
 
-    <TextView
-        android:id="@+id/nome_produto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imagem_produto"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@id/logo_produto"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/nome_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="21dp"
+            android:layout_toRightOf="@id/logo_produto"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/preco_produto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nome_produto"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@id/logo_produto"
-        android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/preco_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nome_produto"
+            android:layout_marginLeft="21dp"
+            android:layout_toRightOf="@id/logo_produto"
+            android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/descricao_produto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/preco_produto"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@id/logo_produto"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/descricao_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/preco_produto"
+            android:layout_marginLeft="21dp"
+            android:layout_toRightOf="@id/logo_produto"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/qntde"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/descricao_produto"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="2dp"
-        android:layout_marginRight="10dp"
-        android:textColor="@color/black"
-        android:hint="0"
-        android:inputType="number"
-         />
+        <EditText
+            android:id="@+id/qntde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descricao_produto"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="10dp"
+            android:hint="0"
+            android:inputType="number"
+            android:textColor="@color/black" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/descricao_produto"
-        android:layout_marginTop="17dp"
-        android:layout_marginRight="12dp"
-        android:layout_toLeftOf="@id/qntde"
-        android:text="Digite a quantidade"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        />
-    <Button
-        android:id="@+id/btn_remover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/descricao_produto"
-        android:layout_marginLeft="10dp"
-        android:textSize="10sp"
-        android:layout_marginTop="2dp"
-        android:text="Remover"
-        android:background="@drawable/remover"
-        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descricao_produto"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@id/qntde"
+            android:text="Digite a quantidade"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_remover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descricao_produto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/remover"
+            android:text="Remover"
+            android:textSize="10sp" />
+
+        <View
+            android:id="@+id/view_endereco_user"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/qntde"
+            android:layout_marginVertical="10dp"
+            android:background="@color/red" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

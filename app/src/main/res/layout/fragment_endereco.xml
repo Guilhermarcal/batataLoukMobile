@@ -21,16 +21,43 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_below="@id/title_endereco_user"
-        android:background="@color/red"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/red" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <Button
+        android:id="@+id/btn_adicionar_novo_endereco"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/view_endereco_user"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/red"
+        android:text="Cadastrar"
+        android:textColor="@color/white" />
+
+    <View
+        android:id="@+id/view_cadastrar_novo_endereco"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/btn_adicionar_novo_endereco"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/red" />
+
+    <!-- <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_endereco_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/view_endereco_user"
+        android:layout_below="@id/view_cadastrar_novo_endereco"
         android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"/> -->
 
+    <ListView
+        android:id="@+id/list_endereco_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_cadastrar_novo_endereco"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp" />
 
 </RelativeLayout>

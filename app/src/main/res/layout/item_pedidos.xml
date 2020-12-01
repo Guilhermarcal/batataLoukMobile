@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="80dp">
+
+        <TextView
+            android:id="@+id/numero_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/red"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/endereco_pedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numero_pedido"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+
+        <View
+            android:id="@+id/view_endereco_user"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/endereco_pedido"
+            android:layout_marginVertical="10dp"
+            android:background="@color/red" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

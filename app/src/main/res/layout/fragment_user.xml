@@ -5,11 +5,93 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.UserFragment">
 
-    <Button
-        android:id="@+id/sair"
+    <RelativeLayout
+        android:id="@+id/relative_user"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="@string/main_sair"
-        />
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+
+        <RelativeLayout
+            android:id="@+id/menu_pedidos"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/menu_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/robotolight"
+                android:text="@string/meus_dados"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menu_pedidos">
+
+            <ImageView
+                android:id="@+id/img_user"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="25dp"
+                android:src="@drawable/avatar" />
+
+            <RelativeLayout
+                android:id="@+id/registro_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_user"
+                android:layout_marginHorizontal="40dp">
+
+                <ImageView
+                    android:id="@+id/img_user_cadastrado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="25dp"
+                    android:src="@drawable/icon_user" />
+
+                <TextView
+                    android:id="@+id/email_usuario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="30dp"
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/sair"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@+id/registro_user"
+                android:layout_marginHorizontal="40dp"
+                android:background="@color/red"
+                android:text="@string/main_sair"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_user"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:minWidth="200dp"
+        android:minHeight="50dp"
+        android:theme="@style/ProgressBarStyle" />
 
 </RelativeLayout>

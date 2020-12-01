@@ -1,6 +1,8 @@
 package br.com.cotemig.projetofinal.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +11,19 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.models.CepUser
 import br.com.cotemig.projetofinal.models.EnderecoUser
+import br.com.cotemig.projetofinal.models.InformacoesEnderecoUser
+import br.com.cotemig.projetofinal.models.Pedido
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import br.com.cotemig.projetofinal.ui.activities.CardapioActivity
 import br.com.cotemig.projetofinal.ui.adapters.EnderecoAdapter
+import com.afollestad.materialdialogs.MaterialDialog
 import kotlinx.android.synthetic.main.fragment_endereco.view.*
 import retrofit2.Call
 import retrofit2.Response
 
 class EnderecoFragment : Fragment() {
+
+    lateinit var lista : List<InformacoesEnderecoUser>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +34,16 @@ class EnderecoFragment : Fragment() {
 
         getEnderecoUser(view)
 
+        view.btn_adicionar_novo_endereco.setOnClickListener {
+            var activity = context as CardapioActivity
+            activity.setFragment(CadastrarEnderecoFragment(), "CadastrarEnderecoFragment")
+        }
+
+        view.list_endereco_user.setOnItemClickListener { adapterView, view, i, l ->
+
+            getPedido(view, lista[i].endereco)
+
+        }
 
         // Inflate the layout for this fragment
         return view
@@ -47,16 +64,13 @@ class EnderecoFragment : Fragment() {
 
                         if(it.body().enderecoPessoa.contains(null)){
 
-                            activity.setFragment(TelaSemEnderecoFragment(), "CadastrarEnderecoFragment")
+                            activity.setFragment(TelaSemEnderecoFragment(), "TelaSemEnderecoFragment")
 
                         }else{
 
                             view.list_endereco_user.adapter = EnderecoAdapter(activity, it.body().enderecoPessoa)
 
-                            view.list_endereco_user.layoutManager = LinearLayoutManager(
-                                activity,
-                                LinearLayoutManager.VERTICAL, false
-                            )
+                            lista = it.body().enderecoPessoa
 
                         }
 
@@ -71,4 +85,50 @@ class EnderecoFragment : Fragment() {
         })
     }
 
+    fun getPedido(view: View, endereco : String){
+
+        var activity = context as CardapioActivity
+
+        var s = RetrofitInitializer().servicePedido()
+
+        var call = s.postNewPedido(activity.getUserEmail(), endereco)
+
+        call.enqueue(object : retrofit2.Callback<Pedido>{
+            override fun onResponse(call: Call<Pedido>?, response: Response<Pedido>?) {
+                response?.let {
+                    if (it.code() == 200){
+
+                        MaterialDialog(activity).show {
+                            title(R.string.sucesso)
+                            message(R.string.PedidoSucesso)
+                            positiveButton(R.string.ok)
+                        }
+
+                        activity.setFragment(PedidoFragment(), "PedidoFragment")
+
+                    }else{
+                        MaterialDialog(activity).show {
+                            title(R.string.sucesso)
+                            message(R.string.PedidoSucesso)
+                            positiveButton(R.string.ok)
+                        }
+
+                        activity.setFragment(PedidoFragment(), "PedidoFragment")
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<Pedido>?, t: Throwable?) {
+                MaterialDialog(activity).show {
+                    title(R.string.sucesso)
+                    message(R.string.PedidoSucesso)
+                    positiveButton(R.string.ok)
+                }
+
+                activity.setFragment(PedidoFragment(), "PedidoFragment")
+            }
+
+        })
+
+    }
 }

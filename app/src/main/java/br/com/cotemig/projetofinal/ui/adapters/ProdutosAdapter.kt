@@ -30,7 +30,6 @@ class ProdutosAdapter (var context: Context, var table : List<Itens>, var listen
         fun bind (context: Context, itens : Itens, listener: ProdutosAdapterListener){
 
             itemView.nome_produto.text = itens.nome
-            itemView.descricao_produto.text = itens.descricao
             itemView.preco_produto.text = itens.preco.toString()
             Glide.with(context).load(itens.foto).into(itemView.imagem_produto)
 

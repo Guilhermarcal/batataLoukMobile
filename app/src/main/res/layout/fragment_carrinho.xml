@@ -5,11 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.CarrinhoFragment">
 
-    <LinearLayout
-        android:id="@+id/linear_fragment_cardapio"
+    <RelativeLayout
+        android:id="@+id/relative_fragment_cardapio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:visibility="invisible">
 
         <RelativeLayout
@@ -22,12 +21,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/robotolight"
                 android:text="Carrinho"
                 android:textColor="@color/white"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="10dp"
                 android:textSize="25sp" />
 
             <TextView
@@ -56,57 +55,64 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/relative_finalizar_pedidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/menu_pedidos" >
+
+            <Button
+                android:id="@+id/finalizar_pedidos"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/red"
+                android:text="Finalizar"
+                android:textColor="@color/white" />
+
+            <View
+                android:id="@+id/view_endereco_user"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/finalizar_pedidos"
+                android:background="@color/red"
+                android:layout_marginHorizontal="20dp"/>
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/CarrinhoVazio"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
             android:fontFamily="@font/robotolight"
             android:text="Não há produtos no carrinho :("
             android:textColor="@color/black"
             android:textSize="20sp" />
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@id/relative_finalizar_pedidos"
             android:fillViewport="true">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lista_produtos"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/lista_produtos"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="10dp" />
-
-                    <Button
-                        android:id="@+id/finalizar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:textSize="10sp"
-                        android:layout_marginTop="2dp"
-                        android:text="Finalizar"
-                        android:background="@drawable/remover"
-                        />
-
-                </LinearLayout>
+                    android:layout_marginTop="10dp" />
 
             </RelativeLayout>
 
-
         </ScrollView>
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ProgressBar
         android:id="@+id/pb_cardapio"

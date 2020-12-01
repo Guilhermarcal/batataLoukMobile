@@ -1,18 +1,12 @@
 package br.com.cotemig.projetofinal.ui.fragments
 
-import android.Manifest
-import android.content.DialogInterface
-import android.content.pm.PackageManager
-import android.location.Location
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AlphaAnimation
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
@@ -22,7 +16,6 @@ import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import br.com.cotemig.projetofinal.ui.activities.CardapioActivity
 import br.com.cotemig.projetofinal.ui.adapters.FiltroAdapter
 import br.com.cotemig.projetofinal.ui.adapters.ProdutosAdapter
-import kotlinx.android.synthetic.main.fragment_cardapio.*
 import kotlinx.android.synthetic.main.fragment_cardapio.view.*
 import retrofit2.Call
 import retrofit2.Response
@@ -32,7 +25,6 @@ var itemList = ArrayList<Int>()
 class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
 
     lateinit var activity: AppCompatActivity
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -166,10 +158,14 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
 
     fun setCarrinho(id: Int) {
 
+        var aux = itemList.size
+        var j: Int = 0
 
         for (i in itemList.indices) {
-            if (itemList[i] == id) {
-                itemList.remove(id)
+            if (j < aux) {
+                if (itemList[i] == id) {
+                    itemList.remove(id)
+                }
             }
 
 
