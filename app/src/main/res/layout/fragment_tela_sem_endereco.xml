@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.TelaSemEnderecoFragment">
+
+    <TextView
+        android:id="@+id/title_sem_endereco_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/title_enderecos_do_usuario"
+        android:textColor="@color/red"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/view_sem_endereco_user"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/title_sem_endereco_user"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/red" />
+
+    <TextView
+        android:id="@+id/nenhum_encontrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_sem_endereco_user"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/nenhum_endereco_encontrado"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/btn_cadastrar_endereco"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/nenhum_encontrado"
+        android:background="@color/red"
+        android:text="Cadastrar"
+        android:textColor="@color/white"
+        android:layout_marginTop="80dp"
+        android:layout_marginHorizontal="30dp"/>
+
+</RelativeLayout>

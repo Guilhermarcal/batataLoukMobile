@@ -21,6 +21,8 @@
     // Frame de alerta
     <string name="title">Ops...</string>
     <string name="UserAndPasswordInvalid">Usuário ou senha inválidos!</string>
+    <string name="ErrorCpf">CEP inválido!</string>
+    <string name="CadastroEndereco">Endereço cadastrado com sucesso!</string>
     <string name="ok">OK</string>
     <string name="UserCreated">Usuário criado com sucesso!</string>
     <string name="UserAlreadyExist">Usuário já existe use outro email!</string>
@@ -31,12 +33,23 @@
     <string name="Verifique">Verifique seu email para redefinir a senha.</string>
     <string name="Forgot">Email inválido!</string>
 
+    // Fragment endereco
+
+    <string name="title_enderecos_do_usuario">Endereços do usuário</string>
+    <string name="nenhum_endereco_encontrado">Nenhum endereço encontrado</string>
+    <string name="title_cadastrar_endereco">Cadastrar Endereço</string>
+    <string name="procurar_cep_cadastrar_endereco">Procurar CEP</string>
+    <string name="edit_text_cep_cadastro_endereco">Digite o CEP</string>
+    <string name="salvar_novo_endereco">Salvar endereço</string>
+    <string name="edit_text_number_cadastro_endereco">Digite o número da casa</string>
 
     // main
     <string name="main_sair">sair</string>
     <string name="pedidos">Pedidos</string>
     <string name="em_andamento">Em andamento</string>
     <string name="forgot_confirmarEmail">Confirmar email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

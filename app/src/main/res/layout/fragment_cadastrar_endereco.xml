@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.CadastrarEnderecoFragment">
+
+    <TextView
+        android:id="@+id/title_cadastro_endereco_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="@string/title_cadastrar_endereco"
+        android:textColor="@color/red"
+        android:textSize="30dp" />
+
+    <View
+        android:id="@+id/view_sem_endereco_user"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/title_cadastro_endereco_usuario"
+        android:layout_marginHorizontal="20dp"
+        android:background="@color/red" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view_sem_endereco_user"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear_cadastro_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/cep_filtro_usuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/view_sem_endereco_user"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="40dp"
+                    android:backgroundTint="@color/red"
+                    android:hint="@string/edit_text_cep_cadastro_endereco"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/cinza" />
+
+                <Button
+                    android:id="@+id/btn_procurar_cep_endereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/red"
+                    android:text="@string/procurar_cep_cadastrar_endereco"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_cadastro_endereco"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/endereco_usuario_cadastro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/localidade_usuario_cadastro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/endereco_usuario_cadastro"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="24dp" />
+
+                <TextView
+                    android:id="@+id/cep_usuario_cadastro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/localidade_usuario_cadastro"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/black"
+                    android:textSize="24dp" />
+
+                <EditText
+                    android:id="@+id/numero_casa_usuario_cadastro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cep_usuario_cadastro"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/red"
+                    android:hint="@string/edit_text_number_cadastro_endereco"
+                    android:inputType="number"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/cinza"
+                    android:textSize="24dp" />
+
+                <Button
+                    android:id="@+id/btn_salvar_endereco"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/numero_casa_usuario_cadastro"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/red"
+                    android:text="@string/salvar_novo_endereco"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

@@ -1,11 +1,10 @@
 package br.com.cotemig.projetofinal.ui.activities
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.helpers.SharedPreferencesHelpers
 import br.com.cotemig.projetofinal.models.Account
@@ -16,7 +15,9 @@ import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
 
+
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -39,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
     }
+
 
     fun loginClick(){
 
@@ -109,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
         var j = JSONObject()
         j.put("email", account.email)
         j.put("password", account.password)
-        SharedPreferencesHelpers.saveString(this,"userdata", "user", j.toString())
+        SharedPreferencesHelpers.saveString(this, "userdata", "user", j.toString())
 
 
     }

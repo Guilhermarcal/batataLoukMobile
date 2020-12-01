@@ -32,14 +32,28 @@ class RetrofitInitializer {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+    private val retrofitCep = Retrofit.Builder()
+        .client(okHttpClient)
+        .baseUrl("https://viacep.com.br/ws/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+
     private val retrofitBatata = Retrofit.Builder()
         .client(okHttpClient)
         .baseUrl("http://191.234.162.161/batata/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+    fun serviceCepUser(): CepUserService {
+        return retrofitCep.create(CepUserService::class.java)
+    }
+
     fun serviceAccount(): AccountService {
         return retrofit.create(AccountService::class.java)
+    }
+
+    fun serviceEnderecoUser(): EnderecoService {
+        return retrofitBatata.create(EnderecoService::class.java)
     }
 
     fun serviceProdutos(): ProdutosService {
