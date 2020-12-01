@@ -1,14 +1,19 @@
 package br.com.cotemig.projetofinal.ui.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
 import br.com.cotemig.projetofinal.helpers.SharedPreferencesHelpers
 import br.com.cotemig.projetofinal.models.CepUser
+import br.com.cotemig.projetofinal.models.EnderecoUser
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
+import br.com.cotemig.projetofinal.ui.adapters.EnderecoAdapter
 import br.com.cotemig.projetofinal.ui.fragments.*
 import kotlinx.android.synthetic.main.activity_cardapio.*
+import kotlinx.android.synthetic.main.fragment_endereco.view.*
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
@@ -27,7 +32,7 @@ class CardapioActivity : AppCompatActivity() {
         }
 
         busca.setOnClickListener {
-            setFragment(EnderecoFragment(), "EnderecoFragment")
+            setFragment(CarrinhoFragment(), "BuscaFragment")
         }
 
         pedido.setOnClickListener {
