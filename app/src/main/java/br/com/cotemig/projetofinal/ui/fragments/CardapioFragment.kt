@@ -27,12 +27,11 @@ import kotlinx.android.synthetic.main.fragment_cardapio.view.*
 import retrofit2.Call
 import retrofit2.Response
 
-    var itemList = ArrayList<Int>()
+var itemList = ArrayList<Int>()
 
 class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
 
     lateinit var activity: AppCompatActivity
-
 
 
     override fun onCreateView(
@@ -42,7 +41,7 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
 
 
         // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_cardapio, container, false)
+        val view = inflater.inflate(R.layout.fragment_cardapio, container, false)
 
         getFiltro(view)
         getProdutos(view)
@@ -52,7 +51,7 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
         return view
     }
 
-    fun getProdutos(view: View){
+    fun getProdutos(view: View) {
 
         var activity = context as CardapioActivity
 
@@ -60,16 +59,16 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
 
         var call = s.getProdutos()
 
-        call.enqueue(object : retrofit2.Callback<Produtos>{
+        call.enqueue(object : retrofit2.Callback<Produtos> {
             override fun onResponse(call: Call<Produtos>?, response: Response<Produtos>?) {
 
                 response?.let {
 
-                    if (it.code() == 200){
+                    if (it.code() == 200) {
 
 
-
-                        view.lista_produtos.adapter = ProdutosAdapter(activity, it.body().produtos, this@CardapioFragment)
+                        view.lista_produtos.adapter =
+                            ProdutosAdapter(activity, it.body().produtos, this@CardapioFragment)
 
                         view.lista_produtos.layoutManager = LinearLayoutManager(
                             activity,
@@ -89,7 +88,7 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
         })
     }
 
-    fun getFiltro(view : View){
+    fun getFiltro(view: View) {
 
         var filtros = ArrayList<String>()
 
@@ -109,17 +108,19 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
     }
 
     class Anime {
-        private fun fadeIn(view : View){
-            val animation = AlphaAnimation(0f,1f)
+        private fun fadeIn(view: View) {
+            val animation = AlphaAnimation(0f, 1f)
             animation.duration = 500L
             view.startAnimation(animation)
         }
-        private fun fadeOut(view: View){
-            val animation = AlphaAnimation(1f,0f)
+
+        private fun fadeOut(view: View) {
+            val animation = AlphaAnimation(1f, 0f)
             animation.duration = 500L
             view.startAnimation(animation)
         }
-        fun tradeView(view1 : View, view2 : View){
+
+        fun tradeView(view1: View, view2: View) {
             fadeOut(view1)
 
             Handler().postDelayed({
@@ -159,9 +160,20 @@ class CardapioFragment : Fragment(), ProdutosAdapter.ProdutosAdapterListener {
     fun getCarrinho(): ArrayList<Int> {
 
 
-
         return itemList
 
+    }
+
+    fun setCarrinho(id: Int) {
+
+
+        for (i in itemList.indices) {
+            if (itemList[i] == id) {
+                itemList.remove(id)
+            }
+
+
+        }
     }
 
 }

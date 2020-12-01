@@ -17,8 +17,8 @@ import kotlinx.android.synthetic.main.item_cardapio.view.nome_produto
 import kotlinx.android.synthetic.main.item_cardapio.view.preco_produto
 import kotlinx.android.synthetic.main.item_carrinho.view.*
 
-class CarrinhoAdapter (var context: Context, var table : List<Itens>) :
-    RecyclerView.Adapter<CarrinhoAdapter.CarrinhoHolder>(){
+class CarrinhoAdapter(var context: Context, var table: List<Itens>) :
+    RecyclerView.Adapter<CarrinhoAdapter.CarrinhoHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarrinhoHolder {
         var view = LayoutInflater.from(context).inflate(R.layout.item_carrinho, parent, false)
@@ -33,35 +33,24 @@ class CarrinhoAdapter (var context: Context, var table : List<Itens>) :
         return table.size
     }
 
-    class CarrinhoHolder( itemView : View) : RecyclerView.ViewHolder(itemView){
-        fun bind (context: Context, itens : Itens){
+    class CarrinhoHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(context: Context, itens: Itens) {
 
 
-            var carrinho = CardapioFragment().getCarrinho()
-
-            for (i in carrinho.indices) {
-
-                if (carrinho[i] == itens.id) {
-
-                    itemView.nome_produto.text = itens.nome
-                    itemView.descricao_produto.text = itens.descricao
-                    itemView.preco_produto.text = itens.preco.toString()
-                    Glide.with(context).load(itens.foto).into(itemView.imagem_produto)
-
-                }
-            }
-
-
+            itemView.nome_produto.text = itens.nome
+            itemView.descricao_produto.text = itens.descricao
+            itemView.preco_produto.text = itens.preco.toString()
+            Glide.with(context).load(itens.foto).into(itemView.imagem_produto)
 
 
             itemView.btn_remover.setOnClickListener {
                 itemView.item_completo.removeAllViews()
+                CardapioFragment().setCarrinho(itens.id)
             }
 
 
         }
     }
-
 
 }
 

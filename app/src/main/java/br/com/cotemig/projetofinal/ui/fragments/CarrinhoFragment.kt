@@ -10,12 +10,17 @@ import android.view.animation.AlphaAnimation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.cotemig.projetofinal.R
+import br.com.cotemig.projetofinal.models.Itens
 import br.com.cotemig.projetofinal.models.Produtos
 import br.com.cotemig.projetofinal.services.RetrofitInitializer
 import br.com.cotemig.projetofinal.ui.activities.CardapioActivity
 import br.com.cotemig.projetofinal.ui.adapters.CarrinhoAdapter
 import br.com.cotemig.projetofinal.ui.adapters.ProdutosAdapter
 import kotlinx.android.synthetic.main.fragment_cardapio.view.*
+import kotlinx.android.synthetic.main.fragment_cardapio.view.linear_fragment_cardapio
+import kotlinx.android.synthetic.main.fragment_cardapio.view.lista_produtos
+import kotlinx.android.synthetic.main.fragment_cardapio.view.pb_cardapio
+import kotlinx.android.synthetic.main.fragment_carrinho.view.*
 import retrofit2.Call
 import retrofit2.Response
 
@@ -54,8 +59,37 @@ class CarrinhoFragment : Fragment() {
 
                     if (it.code() == 200) {
 
+                        var carrinho = CardapioFragment().getCarrinho()
+                        var carrinhoProdutos = ArrayList<Itens>()
+                        var aux = carrinho.size
+                        var j: Int = 0
 
-                        view.lista_produtos.adapter = CarrinhoAdapter(activity, it.body().produtos)
+                        carrinho.run {
+
+                            sort()
+                        }
+
+                        for (i in it.body().produtos.indices) {
+
+                            if (j < aux) {
+                                if (carrinho[i] == it.body().produtos[i].id) {
+
+                                    carrinhoProdutos.add(it.body().produtos[i])
+
+                                }
+                            }
+                            j++
+                        }
+
+                        if (carrinhoProdutos.isEmpty()){
+                            view.CarrinhoVazio.visibility = View.VISIBLE
+
+                        } else{
+                            view.CarrinhoVazio.visibility = View.INVISIBLE
+
+                        }
+
+                        view.lista_produtos.adapter = CarrinhoAdapter(activity, carrinhoProdutos)
 
                         view.lista_produtos.layoutManager = LinearLayoutManager(
                             activity,
